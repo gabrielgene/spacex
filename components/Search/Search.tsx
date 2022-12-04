@@ -16,11 +16,9 @@ export default function Search(props: Props) {
           value={props.value}
           onChange={(e) => props.onChange(e.target.value)}
         />
-        <InputRightAddon
-          backgroundColor="#263238"
-          color="#FFFFFF"
-          children={<SearchIcon />}
-        />
+        <InputRightAddon backgroundColor="#263238" color="#FFFFFF">
+          <SearchIcon />
+        </InputRightAddon>
       </InputGroup>
     </Box>
   );
