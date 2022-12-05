@@ -4,12 +4,11 @@ describe('spacex app', () => {
     // so we must tell it to visit our website with the `cy.visit()` command.
     // Since we want to visit the same URL at the start of all our tests,
     // we include it in our beforeEach function so that it runs before each test
-    // cy.visit('https://spacex-gabrielgene.vercel.app/');
-    cy.visit('http://localhost:3000');
+    cy.visit('https://spacex-gabrielgene.vercel.app/');
   });
 
   it('should displays 8 launches', () => {
-    cy.get('[data-cy=launch-card]').should('have.length', 8);
+    cy.get('[data-cy=launch-card]').should('have.length', 9);
     cy.get('[data-cy=page-count]').should('have.text', '0');
   });
 
@@ -22,7 +21,7 @@ describe('spacex app', () => {
 
   it('should handle url params', () => {
     cy.visit('http://localhost:3000?name=a&page=1');
-    cy.get('[data-cy=launch-card]').should('have.length', 8);
+    cy.get('[data-cy=launch-card]').should('have.length', 9);
     cy.get('[data-cy=page-count]').should('have.text', '1');
     cy.get('[data-cy=search]').should('have.value', 'a');
   });

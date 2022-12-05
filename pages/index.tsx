@@ -20,7 +20,7 @@ type Props = {
   launches: Launch[];
 };
 
-const PAGE_LIMIT = 8;
+export const PAGE_LIMIT = 9;
 
 export const getServerSideProps: GetServerSideProps<Props> = async (
   context,
