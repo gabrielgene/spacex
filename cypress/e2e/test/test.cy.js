@@ -1,10 +1,11 @@
+const MAIN_URL = 'https://spacex-gabrielgene.vercel.app';
 describe('spacex app', () => {
   beforeEach(() => {
     // Cypress starts out with a blank slate for each test
     // so we must tell it to visit our website with the `cy.visit()` command.
     // Since we want to visit the same URL at the start of all our tests,
     // we include it in our beforeEach function so that it runs before each test
-    cy.visit('https://spacex-gabrielgene.vercel.app/');
+    cy.visit(MAIN_URL);
   });
 
   it('should displays 8 launches', () => {
@@ -13,21 +14,21 @@ describe('spacex app', () => {
   });
 
   it('should search for thaicom', () => {
-    cy.visit('http://localhost:3000?page=3');
+    cy.visit(`${MAIN_URL}/?page=3`);
     cy.get('[data-cy=search]').type('thaicom');
     cy.get('[data-cy=launch-card]').should('have.length', 2);
     cy.get('[data-cy=page-count]').should('have.text', '0');
   });
 
   it('should handle url params', () => {
-    cy.visit('http://localhost:3000?name=a&page=1');
+    cy.visit(`${MAIN_URL}/?name=a&page=1`);
     cy.get('[data-cy=launch-card]').should('have.length', 9);
     cy.get('[data-cy=page-count]').should('have.text', '1');
     cy.get('[data-cy=search]').should('have.value', 'a');
   });
 
   it('should navigate to the next and previous page', () => {
-    cy.visit('http://localhost:3000?page=3');
+    cy.visit(`${MAIN_URL}/?page=3`);
     cy.get('[data-cy=page-count]').should('have.text', '3');
     cy.get('[data-cy=nav-back]').click();
     cy.get('[data-cy=page-count]').should('have.text', '2');
