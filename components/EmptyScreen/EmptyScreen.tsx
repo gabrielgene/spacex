@@ -5,6 +5,7 @@ import Empty from 'components/Svg/Empty';
 export default function EmptyScreen() {
   return (
     <Flex
+      data-cy="empty-screen"
       direction="column"
       alignItems="center"
       textAlign="center"

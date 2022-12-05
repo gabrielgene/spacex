@@ -103,6 +103,7 @@ export default function Home(
 
       <Flex alignItems="center" justifyContent="center" mt={6} mb={4}>
         <IconButton
+          data-cy="nav-back"
           variant="outline"
           aria-label="nav back"
           icon={<ChevronLeftIcon />}
@@ -117,14 +118,20 @@ export default function Home(
           borderRadius={12}
           mx={6}
         >
-          <Text fontSize="12px" fontWeight={700} lineHeight="150%">
+          <Text
+            data-cy="page-count"
+            fontSize="12px"
+            fontWeight={700}
+            lineHeight="150%"
+          >
             {page}
           </Text>
         </Flex>
 
         <IconButton
+          data-cy="nav-forward"
           variant="outline"
-          aria-label="nav fourward"
+          aria-label="nav forward"
           disabled={launches.length === 0}
           icon={<ChevronRightIcon />}
           onClick={() => setPage(page + 1)}

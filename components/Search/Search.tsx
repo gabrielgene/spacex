@@ -12,6 +12,7 @@ export default function Search(props: Props) {
     <Box w={350}>
       <InputGroup>
         <Input
+          data-cy="search"
           placeholder="Search"
           value={props.value}
           onChange={(e) => props.onChange(e.target.value)}

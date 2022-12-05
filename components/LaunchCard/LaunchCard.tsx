@@ -17,7 +17,12 @@ export default function LaunchCard(props: Props) {
   const { launch, shouldNavigate } = props;
 
   return (
-    <Box boxShadow="0px 0px 0px 1px #E0E0E0" borderRadius={4} w={350}>
+    <Box
+      data-cy="launch-card"
+      boxShadow="0px 0px 0px 1px #E0E0E0"
+      borderRadius={4}
+      w={350}
+    >
       <Flex alignItems="center" px={3} py={2}>
         <Avatar
           width={5}
